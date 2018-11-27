@@ -18,11 +18,29 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	function __construct()
+	{
+		parent::__construct();
+		if($this->session->userdata('masuk') !=TRUE){
+            $url=base_url('Login');
+            redirect($url);
+        };
+		$this->load->model('m_tulisan');
+		$this->load->model('m_kategori');
+		$this->load->library('upload');
+		// $this->load->model('m_pengguna');
+	}
+
 	public function index()
+
 	{
 		$y['title']='Kuliner Indonesia';
-		$y['kata']='satu';
-		$x['kata']='satu';
+		$x['header_home']=$this->m_tulisan->get_tulisan_by_kategori(1);
+		$x['Konten_makanan_terbaru']=$this->m_tulisan->get_tulisan_by_kategori_withlimit(4,3);
+		$x['Jawa']=$this->m_tulisan->get_tulisan_by_kategori(5);
+		$x['sumatera']=$this->m_tulisan->get_tulisan_by_kategori(6);
+		$x['sulawesi']=$this->m_tulisan->get_tulisan_by_kategori(7);
+		$x['caption']=$this->m_tulisan->get_tulisan_by_kategori_withlimit(3,1);
 		$this->load->view('v_header',$y);
 		$this->load->view('welcome_message',$x);
 		$this->load->view('v_footer');

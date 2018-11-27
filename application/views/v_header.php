@@ -45,7 +45,7 @@
     <!-- /.navbar-collapse -->
     <div class="social-wrapper">
       <ul class="social naked">
-        <li><a href="#"><i class="icon-s-facebook"></i></a></li>
+        <li><a href="https://www.facebook.com"><i class="icon-s-facebook"></i></a></li>
         <li><a href="#"><i class="icon-s-twitter"></i></a></li>
         <li><a href="#"><i class="icon-s-flickr"></i></a></li>
         <li><a href="#"><i class="icon-s-instagram"></i></a></li>

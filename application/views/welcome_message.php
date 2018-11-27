@@ -1,44 +1,12 @@
 <div class="tp-fullscreen-container revolution">
     <div class="tp-fullscreen">
       <ul>
-        <li data-transition="fade"> <img src="<?php echo base_url()?>assets/style/images/art/slider-bg1.jpg"  alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
-          <h1 class="tp-caption large sfr" data-x="30" data-y="263" data-speed="900" data-start="800" data-easing="Sine.easeOut">hello! this is lydia</h1>
-          <div class="tp-caption medium sfr" data-x="30" data-y="348" data-speed="900" data-start="1500" data-easing="Sine.easeOut">most completed photography & <br />
-            magazine template with various options</div>
+        <?php foreach ($header_home->result() as $row): ?>
+        <li data-transition="fade"> <img src="<?php echo base_url()?>assets/images/<?php echo $row->tulisan_gambar;?>"  alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
+          <div class="tp-caption large text-center sfl" data-x="center" data-y="283" data-speed="900" data-start="800" data-easing="Sine.easeOut"><?php echo $row->tulisan_judul;?></div>
+          <div class="tp-caption medium text-center sfr" data-x="center" data-y="363" data-speed="900" data-start="1500" data-easing="Sine.easeOut"><?php echo $row->tulisan_isi;?></div>
         </li>
-        <li data-transition="fade"> <img src="<?php echo base_url()?>assets/style/images/art/slider-bg2.jpg"  alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
-          <div class="tp-caption large text-center sfl" data-x="center" data-y="283" data-speed="900" data-start="800" data-easing="Sine.easeOut">built for creatives to showcase</div>
-          <div class="tp-caption large text-center sfr" data-x="center" data-y="363" data-speed="900" data-start="1500" data-easing="Sine.easeOut">their portfolio beautifully</div>
-        </li>
-        <li data-transition="fade"> <img src="<?php echo base_url()?>assets/style/images/art/slider-bg3.jpg"  alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
-          <div class="tp-caption large text-center sfb" data-x="center" data-y="293" data-speed="900" data-start="800" data-easing="Sine.easeOut">free updates & premium support</div>
-          <div class="tp-caption medium text-center sfb" data-x="center" data-y="387" data-speed="900" data-start="1500" data-easing="Sine.easeOut">you will have access to all updates and free support</div>
-        </li>
-        <li data-transition="fade"> <img src="<?php echo base_url()?>assets/style/video/nyc.jpg" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat" />
-          <div class="tp-caption large text-center sfb" data-x="center" data-y="293" data-speed="900" data-start="800" data-endspeed="100" data-easing="Sine.easeOut" style="z-index: 2;">html5 self hosted video support</div>
-          <div class="tp-caption medium text-center sfb" data-x="center" data-y="387" data-speed="900" data-start="1500" data-endspeed="100" data-easing="Sine.easeOut" style="z-index: 2;">for better visualization of your company</div>
-          <div class="tp-caption tp-fade fadeout fullscreenvideo"
-			data-x="0"
-			data-y="0"
-			data-speed="1000"
-			data-start="1100"
-			data-easing="Power4.easeOut"
-			data-elementdelay="0.01"
-			data-endelementdelay="0.1"
-			data-endspeed="1500"
-			data-endeasing="Power4.easeIn"
-			data-autoplay="true"
-			data-autoplayonlyfirsttime="false"
-			data-nextslideatend="true"
-				data-dottedoverlay="twoxtwo"
-				data-volume="mute" data-forceCover="1" data-aspectratio="16:9" data-forcerewind="on" style="z-index: 1;">
-            <video class="" preload="none" width="100%" height="100%" 
-poster='style/video/nyc.jpg'>
-              <source src='style/video/nyc.mp4' type='video/mp4' />
-              <source src='style/video/nyc.webm' type='video/webm' />
-            </video>
-          </div>
-        </li>
+        <?php endforeach;?>     
       </ul>
       <div class="tp-bannertimer tp-bottom"></div>
     </div>
@@ -48,54 +16,33 @@ poster='style/video/nyc.jpg'>
   
   <div class="light-wrapper">
     <div class="container inner">
-      <div class="thin">
-        <h3 class="section-title text-center"><?php echo $kata;?></h3>
-        <p class="text-center">Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui.</p>
+      <div class="thin" id="hide" onclick="hideDiv()">
+        <?php foreach ($caption->result() as $row): ?>
+        <h3 class="section-title text-center" ><?php echo $row->tulisan_judul;?></h3>
+        <p class="text-center"><?php echo $row->tulisan_isi;?></p>
+        <?php endforeach;?>  
       </div>
       <!-- /.thin -->
       <div class="divide10"></div>
       <div class="row">
+        <?php foreach ($Konten_makanan_terbaru->result() as $row): ?>
         <div class="col-sm-4">
           <div class="caption-overlay">
-            <figure><a href="#"><img src="<?php echo base_url()?>assets/style/images/art/s1.jpg" alt="" /> </a></figure>
+            <figure><a href="#"><img src="<?php echo base_url()?>assets/images/<?php echo $row->tulisan_gambar;?>" alt="" /> </a></figure>
             <div class="caption bottom-right">
               <div class="title">
-                <h3 class="main-title layer">Fashion Photography</h3>
+                <h3 class="main-title layer"><?php echo $row->tulisan_judul;?></h3>
               </div>
               <!--/.title --> 
             </div>
             <!--/.caption --> 
           </div>
         </div>
-        <!-- /column -->
-        <div class="col-sm-4">
-          <div class="caption-overlay">
-            <figure><a href="#"><img src="<?php echo base_url()?>assets/style/images/art/s2.jpg" alt="" /> </a></figure>
-            <div class="caption bottom-right">
-              <div class="title">
-                <h3 class="main-title layer">Food & Drink Photography</h3>
-              </div>
-              <!--/.title --> 
-            </div>
-            <!--/.caption --> 
-          </div>
-        </div>
-        <!-- /column -->
-        <div class="col-sm-4">
-          <div class="caption-overlay">
-            <figure><a href="#"><img src="<?php echo base_url()?>assets/style/images/art/s3.jpg" alt="" /> </a></figure>
-            <div class="caption bottom-right">
-              <div class="title">
-                <h3 class="main-title layer">Wedding Photography</h3>
-              </div>
-              <!--/.title --> 
-            </div>
-            <!--/.caption --> 
-          </div>
-        </div>
-        <!-- /column --> 
+        <?php endforeach;?>  
       </div>
       <!-- /.row --> 
+      <div class="divide30"></div>
+      <div class="cbp-l-loadMore-text"> <a href="<?php echo base_url()?>Resep" target="blank" class="cbp-l-loadMorelink btn" > <span class="cbp-l-loadMore-defaultText">Load More</span> </a> </div>
       
     </div>
     <!-- /.container --> 
@@ -113,14 +60,16 @@ poster='style/video/nyc.jpg'>
       <div class="cbp-panel">
         <div id="js-filters-mosaic" class="cbp-filter-container text-center">
           <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div>
-          <div data-filter=".print" class="cbp-filter-item"> Print </div>
-          <div data-filter=".web" class="cbp-filter-item"> Web Design </div>
-          <div data-filter=".logo" class="cbp-filter-item"> Logo </div>
-          <div data-filter=".motion" class="cbp-filter-item"> Motion </div>
+          <div data-filter=".5" class="cbp-filter-item"> Masakan Jawa </div>
+          <div data-filter=".6" class="cbp-filter-item"> Masakan Sumatera </div>
+          <div data-filter=".7" class="cbp-filter-item"> Masakan Sulawesi </div>
         </div>
         <div id="js-grid-mosaic" class="cbp">
-          <div class="cbp-item print motion"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="https://vimeo.com/24243147" data-title-id="title-1">
-            <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p1.jpg" alt="" /> </div>
+
+          <?php foreach ($Jawa->result() as $row): ?>
+
+          <div class="cbp-item 5"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="<?php echo base_url()?>assets/images/<?php echo $row->tulisan_gambar;?>" data-title-id="title-1">
+            <div class="cbp-caption-defaultWrap"> <img src="<?php echo base_url()?>assets/images/<?php echo $row->tulisan_gambar;?>" alt="" /> </div>
             <div class="cbp-caption-activeWrap">
               <div class="cbp-l-caption-alignCenter">
                 <div class="cbp-l-caption-body">
@@ -131,28 +80,15 @@ poster='style/video/nyc.jpg'>
             <!--/.cbp-caption-activeWrap --> 
             </a>
             <div id="title-1" class="hidden">
-              <h3>Ipsum Tortor Dapibus</h3>
-              <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+              <h3 class="text-center"><?php echo $row->tulisan_judul?></h3>
             </div>
             <!-- /.hidden --> 
           </div>
           <!--/.cbp-item -->
-          
-          <div class="cbp-item print"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="style/images/art/p2-full.jpg" data-title-id="title-2">
-            <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p2.jpg" alt="" /> </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title"><span class="cbp-plus"></span></div>
-                </div>
-              </div>
-            </div>
-            <!--/.cbp-caption-activeWrap --> 
-            </a> </div>
-          <!--/.cbp-item -->
-          
-          <div class="cbp-item web logo"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="style/images/art/p3-full.jpg" data-title-id="title-3">
-            <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p3.jpg" alt="" /> </div>
+          <?php endforeach;?> 
+          <?php foreach ($sumatera->result() as $row): ?>
+          <div class="cbp-item 6"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="<?php echo base_url()?>assets/images/<?php echo $row->tulisan_gambar;?>" data-title-id="title-3">
+            <div class="cbp-caption-defaultWrap"> <img src="<?php echo base_url()?>assets/images/<?php echo $row->tulisan_gambar;?>" alt="" /> </div>
             <div class="cbp-caption-activeWrap">
               <div class="cbp-l-caption-alignCenter">
                 <div class="cbp-l-caption-body">
@@ -163,41 +99,16 @@ poster='style/video/nyc.jpg'>
             <!--/.cbp-caption-activeWrap --> 
             </a>
             <div id="title-3" class="hidden">
-              <h3>Ullamcorper Sem Bibendum</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+              <h3 class="text-center"><?php echo $row->tulisan_judul?></h3>
+              
             </div>
             <!-- /.hidden --> 
           </div>
           <!--/.cbp-item -->
-          
-          <div class="cbp-item web"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="style/images/art/p4-full.jpg" data-title-id="title-4">
-            <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p4.jpg" alt="" /> </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title"><span class="cbp-plus"></span></div>
-                </div>
-              </div>
-            </div>
-            <!--/.cbp-caption-activeWrap --> 
-            </a> </div>
-          <!--/.cbp-item -->
-          
-          <div class="cbp-item print logo"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="style/images/art/p5-full.jpg" data-title-id="title-5">
-            <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p5.jpg" alt="" /> </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title"><span class="cbp-plus"></span></div>
-                </div>
-              </div>
-            </div>
-            <!--/.cbp-caption-activeWrap --> 
-            </a> </div>
-          <!--/.cbp-item -->
-          
-          <div class="cbp-item print web"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="style/images/art/p6-full.jpg" data-title-id="title-6">
-            <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p6.jpg" alt="" /> </div>
+          <?php endforeach;?>
+          <?php foreach ($sulawesi->result() as $row): ?>
+          <div class="cbp-item 7"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="<?php echo base_url()?>assets/images/<?php echo $row->tulisan_gambar;?>" data-title-id="title-6">
+            <div class="cbp-caption-defaultWrap"> <img src="<?php echo base_url()?>assets/images/<?php echo $row->tulisan_gambar;?>" alt="" /> </div>
             <div class="cbp-caption-activeWrap">
               <div class="cbp-l-caption-alignCenter">
                 <div class="cbp-l-caption-body">
@@ -208,109 +119,12 @@ poster='style/video/nyc.jpg'>
             <!--/.cbp-caption-activeWrap --> 
             </a>
             <div id="title-6" class="hidden">
-              <h3>Ullamcorper Sem Bibendum</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+              <h3 class="text-center"><?php echo $row->tulisan_judul?></h3>
             </div>
             <!-- /.hidden --> 
           </div>
           <!--/.cbp-item -->
-          
-          <div class="cbp-item motion logo"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="https://vimeo.com/6757600" data-title-id="title-7">
-            <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p7.jpg" alt="" /> </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title"><span class="cbp-plus"></span></div>
-                </div>
-              </div>
-            </div>
-            <!--/.cbp-caption-activeWrap --> 
-            </a> </div>
-          <!--/.cbp-item -->
-          
-          <div class="cbp-item print logo"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="<?php echo base_url()?>assets/style/images/art/p8-full.jpg" data-title-id="title-8">
-            <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p8.jpg" alt="" /> </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title"><span class="cbp-plus"></span></div>
-                </div>
-              </div>
-            </div>
-            <!--/.cbp-caption-activeWrap --> 
-            </a> </div>
-          <!--/.cbp-item -->
-          
-          <div class="cbp-item logo web"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="<?php echo base_url()?>assets/style/images/art/p9-full.jpg" data-title-id="title-9">
-            <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p9.jpg" alt="" /> </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title"><span class="cbp-plus"></span></div>
-                </div>
-              </div>
-            </div>
-            <!--/.cbp-caption-activeWrap --> 
-            </a> </div>
-          <!--/.cbp-item -->
-          
-          <div class="cbp-item print web"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="<?php echo base_url()?>assets/style/images/art/p10-full.jpg" data-title-id="title-10">
-            <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p10.jpg" alt="" /> </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title"><span class="cbp-plus"></span></div>
-                </div>
-              </div>
-            </div>
-            
-            <!--/.cbp-caption-activeWrap --> 
-            
-            </a> </div>
-          
-          <!--/.cbp-item -->
-          
-          <div class="cbp-item print"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="<?php echo base_url()?>assets/style/images/art/p11-full.jpg" data-title-id="title-11">
-            <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p11.jpg" alt="" /> </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title"><span class="cbp-plus"></span></div>
-                </div>
-              </div>
-            </div>
-            
-            <!--/.cbp-caption-activeWrap --> 
-            
-            </a> </div>
-          
-          <!--/.cbp-item -->
-          
-          <div class="cbp-item print logo"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="<?php echo base_url()?>assets/style/images/art/p12-full.jpg" data-title-id="title-12">
-            <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p12.jpg" alt="" /> </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title"><span class="cbp-plus"></span></div>
-                </div>
-              </div>
-            </div>
-            <!--/.cbp-caption-activeWrap --> 
-            </a> </div>
-          <!--/.cbp-item -->
-          
-          <div class="cbp-item print logo"> <a class="cbp-caption fancybox-media" data-rel="portfolio" href="<?php echo base_url()?>assets/style/images/art/p13-full.jpg" data-title-id="title-13">
-            <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p13.jpg" alt="" /> </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title"><span class="cbp-plus"></span></div>
-                </div>
-              </div>
-            </div>
-            <!--/.cbp-caption-activeWrap --> 
-            </a> </div>
-          <!--/.cbp-item --> 
+          <?php endforeach;?>
           
         </div>
         <!--/.cbp --> 
@@ -493,3 +307,15 @@ poster='style/video/nyc.jpg'>
     
   </div>
   <!-- /.light-wrapper -->
+
+  <script type="text/javascript">
+
+    function hideDiv(){
+      var x = document.getElementById("hide");
+
+      x.style.display = "none";
+    }
+    
+
+
+  </script>

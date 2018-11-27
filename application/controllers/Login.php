@@ -13,6 +13,7 @@ class Login extends CI_Controller
 
 	function index()
 	{
+		
 		$this->load->view('v_login');
 	}
 
@@ -32,7 +33,7 @@ class Login extends CI_Controller
 		}
 
 		if($this->session->userdata('masuk') == true){
-            redirect('Welcome');
+            redirect('Admin/Home');
         }else{
             redirect('Login/gagallogin');
         }
@@ -41,6 +42,12 @@ class Login extends CI_Controller
 	function gagallogin(){
             $url=base_url('Login');
             echo $this->session->set_flashdata('msg','<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> Username Atau Password Salah</div>');
+            redirect($url);
+        }
+
+        function logout(){
+            $this->session->sess_destroy();
+            $url=base_url('Login');
             redirect($url);
         }
 }
