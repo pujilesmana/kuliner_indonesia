@@ -45,7 +45,7 @@ wrapper -->
                            $tulisan_isi=$i['tulisan_isi'];
                            $tulisan_tanggal=$i['tanggal'];
                            $tulisan_gambar=$i['tulisan_gambar']; 
-                           $tulisan_kategori_id=$i['kategori_id'];                           
+                           $tulisan_kategori_id=$i['tulisan_kategori_id'];                           
                       ?>
                   <tr>
                       <td><img src="<?php echo base_url().'assets/images/'.$tulisan_gambar;?>" style="width:90px;"></td>
@@ -122,7 +122,7 @@ wrapper -->
                            $tulisan_isi=$i['tulisan_isi'];
                            $tulisan_tanggal=$i['tanggal'];
                            $tulisan_gambar=$i['tulisan_gambar'];
-                           $tulisan_kategori_id=$i['kategori_id'];                            
+                           $tulisan_kategori_id=$i['tulisan_kategori_id'];                            
         ?>
         <div class="modal" tabindex="-1" role="dialog" id="editcategory<?php echo $tulisan_id;?>">
             <div class="modal-dialog">
@@ -187,7 +187,7 @@ wrapper -->
               $tulisan_isi=$i['tulisan_isi'];
               $tulisan_tanggal=$i['tanggal'];
               $tulisan_gambar=$i['tulisan_gambar'];
-              $tulisan_kategori_id=$i['kategori_id']; 
+              $tulisan_kategori_id=$i['tulisan_kategori_id']; 
         ?>
         <div class="modal" tabindex="-1" role="dialog" id="hapuscategory<?php echo $tulisan_id;?>">
             <div class="modal-dialog">
