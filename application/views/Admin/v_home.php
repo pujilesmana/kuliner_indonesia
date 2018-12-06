@@ -146,7 +146,7 @@ wrapper -->
                                 </div>
                                  <div class="col-md-12 col mb-20">
                                   <label for="inlineFormCustomSelect">Kategori</label>
-                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="xalbum" required>
+                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="xkategori" required>
                                         <option selected value="">Choose...</option>
                                          <?php
     

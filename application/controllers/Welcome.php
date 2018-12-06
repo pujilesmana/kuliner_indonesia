@@ -32,7 +32,6 @@ class Welcome extends CI_Controller {
 	}
 
 	public function index()
-
 	{
 		$y['title']='Kuliner Indonesia';
 		$x['header_home']=$this->m_tulisan->get_tulisan_by_kategori(1);
